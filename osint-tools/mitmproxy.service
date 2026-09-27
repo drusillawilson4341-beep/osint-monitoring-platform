@@ -1,0 +1,14 @@
+[Unit]
+Description=mitmproxy HTTPS 抓包代理(常驻)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/root/test/osint-tools/mitm.env
+ExecStart=/root/test/osint-tools/.venv-mitm/bin/mitmdump -s /root/test/osint-tools/servers/mitm_addon.py --listen-port 8080 --proxyauth ${MITM_PROXYAUTH} --set block_global=false
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

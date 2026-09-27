@@ -1,0 +1,17 @@
+[Unit]
+Description=osint_bot: Telegram <-> Pi conversation bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/test/osint-bot
+ExecStart=/usr/bin/python3 /root/test/osint-bot/osint_bot.py
+EnvironmentFile=/root/test/osint-bot/.env
+Environment=HOME=/root
+Environment=PATH=/root/.pi/agent/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

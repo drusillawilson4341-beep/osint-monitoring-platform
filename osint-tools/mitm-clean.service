@@ -1,0 +1,6 @@
+[Unit]
+Description=Clear mitmproxy flows
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /root/test/osint-tools/cleanup_flows.sh

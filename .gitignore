@@ -1,0 +1,35 @@
+# ===== 密钥 / 环境变量（绝不提交）=====
+.env
+*.env
+*.env.*
+!*.env.example
+mitm.env
+
+# ===== 运行状态 / 去重数据 =====
+state.json
+state.json.tmp
+state.lock
+requirements.log
+
+# ===== 日志 / PID =====
+*.log
+*.pid
+
+# ===== 抓包流量与运行时数据（敏感，绝不提交）=====
+var/
+osint-tools/var/
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.venv-mitm/
+*.egg-info/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~

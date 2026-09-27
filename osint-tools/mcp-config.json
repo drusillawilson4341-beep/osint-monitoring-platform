@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "osint-tools": {
+      "command": "/root/test/osint-tools/.venv/bin/python",
+      "args": ["/root/test/osint-tools/servers/osint_server.py"]
+    },
+    "mitmproxy": {
+      "command": "/root/test/osint-tools/.venv-mitm/bin/python",
+      "args": ["/root/test/osint-tools/servers/mitm_server.py"]
+    },
+    "waf-fuzzer": {
+      "command": "/root/scan/Waf-Auto-Fuzzer/.venv/bin/python",
+      "args": ["/root/scan/Waf-Auto-Fuzzer/waf_mcp_server.py"]
+    }
+  }
+}

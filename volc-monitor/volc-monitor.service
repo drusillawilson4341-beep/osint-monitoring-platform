@@ -1,0 +1,13 @@
+[Unit]
+Description=Multi-source business announcements -> Telegram (single check)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/test/volc-monitor
+ExecStart=/usr/bin/python3 -u /root/test/volc-monitor/monitor.py --once
+EnvironmentFile=/root/test/volc-monitor/.env
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=OSINT tools provisioning (install/update, idempotent)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /root/test/osint-tools/install.sh

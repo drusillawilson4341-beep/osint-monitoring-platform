@@ -1,0 +1,8 @@
+[Unit]
+Description=mitm 抓包域名漏洞日报 (VirusTotal + Shodan)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -u /root/test/mitm-monitor/monitor.py --once

@@ -1,0 +1,15 @@
+[Unit]
+Description=Monitor Telegram 1/0 replies (iteration decision)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/test/volc-monitor
+ExecStart=/usr/bin/python3 -u /root/test/volc-monitor/monitor.py --poll
+EnvironmentFile=/root/test/volc-monitor/.env
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

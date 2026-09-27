@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily multi-source business announcements check
+
+[Timer]
+# 每天北京时间 10:00 准时触发
+OnCalendar=*-*-* 10:00:00 Asia/Shanghai
+Persistent=true
+
+[Install]
+WantedBy=timers.target
